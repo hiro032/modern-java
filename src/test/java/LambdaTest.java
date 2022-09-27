@@ -54,4 +54,30 @@ public class LambdaTest {
 
         assertEquals(result.size(), 3);
     }
+
+    @Test
+    @DisplayName("filter 3")
+    void filter_anonymous_class() {
+        List<Apple> result = filter(apples, new ApplePredicate() {
+            @Override
+            public boolean filter(Apple apple) {
+                return apple.color == Color.RED;
+            }
+        });
+
+        assertEquals(result.size(), 2);
+    }
+
+    private List<Apple> filter(List<Apple> apples, ApplePredicate predicate) {
+
+        List<Apple> result = new ArrayList<>();
+
+        for (Apple apple : apples) {
+            if (predicate.filter(apple)) {
+                result.add(apple);
+            }
+        }
+
+        return result;
+    }
 }
