@@ -68,6 +68,14 @@ public class LambdaTest {
         assertEquals(result.size(), 2);
     }
 
+    @Test
+    @DisplayName("filter lambda")
+    void filter_lambda() {
+        List<Apple> result = filter(apples, apple -> apple.color == Color.RED);
+
+        assertEquals(result.size(), 2);
+    }
+
     private List<Apple> filter(List<Apple> apples, ApplePredicate predicate) {
 
         List<Apple> result = new ArrayList<>();
