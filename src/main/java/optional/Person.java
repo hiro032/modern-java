@@ -1,9 +1,11 @@
 package optional;
 
-public class Person {
-    private Car car;
+import java.util.Optional;
 
-    public Car getCar() {
+public class Person {
+    private Optional<Car> car;
+
+    public Optional<Car> getCar() {
         return car;
     }
 }
