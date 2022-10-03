@@ -27,3 +27,13 @@ Comparator<Apple> byWeight = new Comparator<Apple>() {
 Comparator<Apple> byWeight = (Apple a1, Apple a2) -> a1.getWetight().compareTo(a2.getWeight());
      
 ```
+### 2.2 어디에, 어떻게 람다를 사용할까?
+람다 함수는 함수형 인터페이스로 정의된 타입의 변수로 받을 수 있다.
+이렇게 참조로 표현되는 람다는 메서드의 파라미터, 응답 타입, 변수를 통해 전달 될 수 있고 이런 특성을 통해 자바에서 일급 객체로 다뤄질 수 있다.
+
+### 2.3 함수형 인터페이스
+함수형 인터페이스는 오직 하나의 추상 메서드를 가져야 한다. (default 메서드나 static 메서드는 여러 개여도 상관없음.)
+
+자바 8 에서 제공하는 함수형 인터페이스를 알아보자.
+
+
