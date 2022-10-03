@@ -34,6 +34,30 @@ Comparator<Apple> byWeight = (Apple a1, Apple a2) -> a1.getWetight().compareTo(a
 ### 2.3 함수형 인터페이스
 함수형 인터페이스는 오직 하나의 추상 메서드를 가져야 한다. (default 메서드나 static 메서드는 여러 개여도 상관없음.)
 
-자바 8 에서 제공하는 함수형 인터페이스를 알아보자.
+자바 8 에서 제공하는 대표적인 함수형 인터페이스를 알아보자.
+```Java
+@FunctionalInterface
+public interface Predicate<T> {
+  boolean test(T t);
+}
 
+Predicate predicate = (String s) -> s.isEmpty();
+```
 
+```Java
+@FunctionalInterface
+public interface Consumer<T> {
+  void accept(T t);
+}
+
+Consumer consumer = (String text) -> System.out.println(text);
+```
+
+```Java
+@FunctionalInterface
+public interface Function<T, R> {
+  R apply(T t);
+}
+
+Function functional = (String s) -> s.length();
+```
